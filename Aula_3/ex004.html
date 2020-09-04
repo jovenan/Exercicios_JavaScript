@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eventos DOM</title>
+    <style>
+        body {
+            background-color: aqua;
+            color:rgb(255, 255, 255);
+            font-size:40px
+        }
+        #Area {
+            padding:100px;
+            text-align: center;
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <!--Posso fazer dessa forma colocando o evento na tag chamando a funcao-->
+    <div id="Area" onclick="clicar()" onmouseenter="passar()" onmouseout="sair()">
+        Clique em mim
+    </div>
+    
+    <script>
+        //Posso fazer dessa forma usando addEventListener na variavelz que pegou o ID
+        var a = window.document.getElementById("Area")
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', passar)
+        a.addEventListener('mouseout', sair)
+
+        function clicar(){
+        document.getElementById('Area').style.backgroundColor = 'Red'
+        }
+        function passar() {
+            document.getElementById('Area').style.backgroundColor = 'blue'
+        }
+        function sair() {
+            document.getElementById('Area').style.backgroundColor = 'black'
+        }
+    </script>
+</body>
+</html>

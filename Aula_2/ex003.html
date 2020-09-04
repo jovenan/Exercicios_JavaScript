@@ -13,8 +13,17 @@
     </style>
 </head>
 <body>
-    
+    <h1>Estudos com DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JS</p>
+    <div>Clique em mim</div>
+    <p>Esse é um texto</p>
     <script>
+        var p1 = document.getElementsByTagName('p')[0]
+        var corpo = document.body
+        corpo.style.background = 'black'
+        document.write(p1.innerText)
+        document.write(window.document.URL)
         var n1 = window.prompt("Digite um numero: ")
         var n2 = window.prompt("Digite outro numero: ")
         n1 = Number.parseInt(n1)
