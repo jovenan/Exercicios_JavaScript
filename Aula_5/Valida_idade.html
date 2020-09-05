@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Idade</title>
+    <style>
+        body {
+            background-color: rgb(131, 122, 255);
+            
+            font: normal 26px
+        }
+        header {
+            color: #ffffff;
+            text-align: center;
+        }
+        section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+            color: black;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.438);
+        }
+        footer {
+            color: white;
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Verificador de Idade</h1>
+    </header>
+    <section>
+        <div>
+            <p>Ano de nascimento
+                <input type="number" name="Anonascimento" id="txtano" min="0">
+            </p>
+        <p>Sexo:
+            <input type="Radio" name="radsex" id="masculino">
+            <label for="masculino">Maculino</label>
+            <input type="Radio" name="radsex" id="feminino">
+            <label for="feminino">Feminino</label>
+        </p>
+        <p>
+            <input type="button" value="Verificar" id="btn" onclick="verificar()">
+        </p>
+        </div>
+       <div id="res">
+            Preencha os dados acima para ver o resultado!
+        </div>
+        </section>
+    <footer>
+        <p>&copy; Curso</p>
+    </footer>
+    <script>
+        function verificar() {
+            var data = new Date()
+            var ano = data.getFullYear()
+            var fano = document.getElementById("txtano")
+            fano = Number(fano.value)
+            var res = document.querySelector("div#res")
+            if (fano <= 0 || fano > ano || fano.length == 0) {
+                window.alert("ERRO! verifique os dados e tente novamente")
+            } else {
+                var fsex = document.getElementsByName("radsex")
+                var idade = ano - fano
+                var genero = ""
+                if (fsex[0].checked) {
+                    genero = "homem"
+                } else {
+                    genero = "mulher"
+                }
+                res.style.textAlign = "center"
+                res.innerHTML = `Detectamos ${genero} com ${idade}` 
+            }
+        }
+    </script>
+</body>
+</html>
