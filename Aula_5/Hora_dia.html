@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora do dia</title>
+    <style>
+        body {
+            font: normal 26px
+        }
+        header {
+            color: #ffffff;
+            text-align: center;
+        }
+        section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+            color: white;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.438);
+        }
+        footer {
+            color: white;
+            margin: auto;
+            text-align: center;
+        }
+        #imagens {
+            width: 300px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.438);
+            border-radius: 100%;
+        }
+        #foto {
+            text-align: center;
+            
+        }
+        #msg {
+            color: black;
+            font-size: 26px;
+            text-align: center;
+            padding-bottom: 30px;
+        }
+    </style>
+</head>
+<body onload="carregar()">
+    <header>
+        <h1>Hora do dia</h1>
+    </header>
+    <section>
+        <div id="msg">
+           aqui vai texto
+        </div>
+        <div id="foto">
+            <img id="imagens" src="imagens/manha.jpg" alt="imagem do dia">
+        </div>  
+    </section>
+    <footer>
+        <p>&copy; Curso</p>
+    </footer>
+    <script>
+        function carregar () {
+            var msg = document.getElementById("msg")
+            var img = document.getElementById("imagens")
+            var data = new Date()
+            var hora = data.getHours()
+            msg.innerHTML = `Agora sao ${hora} horas.`
+            if (hora >= 0 && hora < 12) {
+                //Bom dia
+                img.src = 'imagens/manha.jpg'
+                img.style.height = "300px"
+                document.body.style.backgroundColor = "#80CEE1"
+            } else if (hora >= 12 && hora <= 18) {
+                //Boa tarde
+                img.src = 'imagens/tarde.jpg'
+                img.style.height = "300px"
+                document.body.style.backgroundColor = "#7a74db"
+            } else {
+                //Boa noite
+                img.src = 'imagens/noite.jpg'
+                img.style.height = "300px"
+                document.body.style.backgroundColor = "#9D9B9B"
+            }
+        }
+     </script>
+</body>
+</html>

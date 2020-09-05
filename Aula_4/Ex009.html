@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eventos DOM</title>
+    <style>
+        body {
+            background-color: aqua;
+            color:rgb(255, 255, 255);
+            font-size:30px;
+            
+        }
+       
+    </style>
+</head>
+<body>
+    <h1>Nativo ou Estrangeiro?</h1>
+    Digite seu Pais <input type="text" name="txt1" id="txt1">
+    <input type="button" value="verificar" onclick="VerNacionalidade()"> 
+    <div id="res"></div>
+    <script>
+        function VerNacionalidade() {
+            var pais = document.getElementById("txt1")
+            var divres = document.getElementById("res")
+            pais = pais.value
+            if (pais == "Brasil" || pais == "brasil") {
+                divres.innerHTML = "<p>Voce é brasileiro</p>"
+            }
+            else {
+                divres.innerHTML = "<p>Voce é estrangeiro</p>"
+            }
+        }
+    </script>
+</body>
+</html>
