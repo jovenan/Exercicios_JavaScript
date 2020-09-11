@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo</title>
+    <style>
+        body {
+            background-color: rgb(131, 122, 255);
+            
+            font: normal 26px
+        }
+        header {
+            color: #ffffff;
+            text-align: center;
+        }
+        section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.438);
+        }
+        footer {
+            color: white;
+            margin: auto;
+            text-align: center;
+        }
+        div {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Vamos contar</h1>
+    </header>
+    <section>
+        <div>
+            <label>Inicio</label> <input type="number" id="inicio"><br><br>
+            <label>Fim</label> <input type="number" id="fim"><br><br>
+            <label>Passo</label> <input type="number" id="passo"><br><br>
+            <input type="button" name="Contar" onclick="Contar()" id="btn" value="Contar">
+            <p>Preparando Contagem...</p>
+        </div>
+        <div id="res">
+        </div>
+        </section>
+    <footer>
+        <p>&copy; Curso</p>
+    </footer>
+    <script>
+        function Contar() {
+            var inicio = document.getElementById("inicio")
+            inicio = Number(inicio.value)
+            var fim = document.getElementById("fim")
+            fim = Number(fim.value)
+            var passo= document.getElementById("passo")
+            passo =  Number(passo.value)
+            if (inicio == 0 || fim == 0 || passo == 0) {
+                window.alert("Preencha valores determinados!")
+            } else if (passo == 0) {
+                window.alert("passo tem que ser maior que 0!")
+            } else {
+                var valores = ""
+                valores += String(inicio)
+                valores += " \u{1f449} "
+                if (inicio < fim) {
+                    for (inicio,fim;inicio < fim;passo) {
+                        if (inicio + passo > fim) {
+                            break
+                        }else {
+                            inicio = inicio + passo
+                            valores += String(inicio)
+                            valores += " \u{1f449} "
+                        }
+                        
+                    }
+                } else {
+                    for (inicio,fim;inicio > fim;passo) {
+                        if (inicio + passo < fim) {
+                            break
+                        }else {
+                            inicio = inicio - passo
+                            valores += String(inicio)
+                            valores += " \u{1f449} "
+                        }
+                        
+                    }
+                }
+                valores += " \u{1f3c1} "
+                var res = document.getElementById("res")
+                res.innerHTML = valores
+            }
+        }
+    </script>
+</body>
+</html>

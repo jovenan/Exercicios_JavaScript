@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo</title>
+    <style>
+        body {
+            background-color: rgb(131, 122, 255);
+            
+            font: normal 26px
+        }
+        header {
+            color: #ffffff;
+            text-align: center;
+        }
+        section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.438);
+        }
+        footer {
+            color: white;
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tabuada</h1>
+    </header>
+    <section>
+        <div>
+            Numero: <input type="number" name="txtnumero" id="txtnumero" min="0"> <input type="button" value="Gerar tabuada" id="botao" onclick="Calcular()">
+            <br><br><select name="tabuada" id="campo" size="10" style="width: 100px;">
+            </select>
+        </div>
+        </section>
+    <footer>
+        <p>&copy; Curso</p>
+    </footer>
+    <script>
+        function Calcular() {
+            document.getElementById("campo").innerHTML = ""
+            var numero = Number(document.getElementById("txtnumero").value)
+            var resultado_str = ""
+            var campo = document.getElementById("campo")
+            var count = 1
+            var result_multi = 0
+            for (count; count <= 10; count++) {
+                result_multi = count * numero
+                campo.innerHTML += `<option value="vl${count}">${numero} x ${count} = ${result_multi}</option>`
+            }
+        }
+    </script>
+</body>
+</html>
