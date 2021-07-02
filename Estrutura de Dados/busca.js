@@ -14,7 +14,7 @@ console.log(busca(45))
 console.log(busca(35))
 
 
-// Busca sequencial //
+// Busca binaria //
 var valoresBin = [5,8,10,22,35,38,40,50,60,70];
 
 function buscaBinaria(num) {
