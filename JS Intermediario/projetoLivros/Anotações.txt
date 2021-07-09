@@ -1,0 +1,14 @@
+- Para iniciar o projeto usamos o :
+    npm init -y
+
+Assim ele cria o arquivo "package.json".
+
+Entrando nele, temos o array "scripts", 
+dentro dele especificamos o comando seguido pelo codigo que deve ser executado.
+
+- Não precisamos subir o "node_modules" no github, colocamos ele no gitignore
+
+- Utilizamos o comando "npm i readline-sync" para instalar um modulo no projeto.
+- Esse modulo "readline-sync" simula interações com o usuario por meio do terminal, como se fosse o value de um input.
+
+- Para rodar o projeto, basta digitar "npm start"
